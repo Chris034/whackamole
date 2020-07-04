@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(255, 217, 0);
+}
+
+.game {
+
+    display: inline-block; 
+    text-align: justify;
+
+
+    width: 600px;
+    height: 400px;
+    display: flex;    /* these two lines make it so that you wrap to
+                         fit the elements   */ 
+    flex-wrap: wrap;  
+    margin: 0 auto; /* auto centers it*/
+}
+
+
+.hole {
+
+
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+
+
+.hole:after {
+    display: block; /**/
+    background: url(dirt.svg) bottom center no-repeat;
+    background-size: contain; /*make sure image is fully visible*/
+    content: '';
+    width: 100%;
+    height:70px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+  }
+
+.mole{
+    background: url('mole.svg') bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 130%;
+    transition:all 0.4s;
+}
+
+.hole.up .mole {
+    
+    top: 0;
+}
